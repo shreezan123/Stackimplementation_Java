@@ -8,13 +8,17 @@ public class StackOperations{
 		this.mystack = new int[size]; //create a stack of size as mentioned while creating object
 		this.global_size = size; //update the global variable 
 	}
+	//the below method will allow us to calculate the number of 
+	
 	public void push(int value){
 		if (counter<global_size){
 		mystack[counter] = value;
 		counter += 1;//we have to do this unless counter < stacksize
 		}
 		else{
-			System.out.println("Stack Oevrflow");
+			this.mystack = new int[counter+1];
+			mystack[counter] = value;
+			counter += 1;
 		}
 	}
 	public int getSize(){
